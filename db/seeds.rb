@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
+
+Inspection.destroy_all
+
+15.times do |t|
+  Inspection.create(
+    date_performed: Time.zone.now + t.days,
+    vin: rand(999999),
+    technician_id: rand(99)
+  )
+end

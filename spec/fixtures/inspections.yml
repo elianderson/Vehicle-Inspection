@@ -1,0 +1,6 @@
+<%5.times do |i| %>
+inspection_<%= i %>:
+  date_performed: <%= Time.zone.now - rand(10).days %>
+  vin: <%= rand(999999) %>
+  technician_id: <%= rand(99) %>
+<% end %>

@@ -199,8 +199,8 @@ class InspectionFactory
     }
   ]
 
-  def self.build
-    inspection = Inspection.new
+  def self.build(attributes = {})
+    inspection = Inspection.new(attributes)
 
     TEMPLATE.each do |area_template|
       area = inspection.areas.build(

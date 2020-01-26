@@ -10,15 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_042732) do
+ActiveRecord::Schema.define(version: 2020_01_26_082854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "areas", force: :cascade do |t|
+    t.string "name"
+    t.integer "inspection_id"
+    t.integer "sequence"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "inspections", force: :cascade do |t|
     t.datetime "date_performed"
     t.string "vin"
     t.integer "technician_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "tire_size"
+    t.text "notes"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.integer "condition"
+    t.integer "area_id"
+    t.text "details"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "type"
+    t.integer "sequence"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "name"
+    t.integer "sequence"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

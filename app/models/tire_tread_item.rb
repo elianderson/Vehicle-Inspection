@@ -1,0 +1,2 @@
+class TireTreadItem < Item
+end

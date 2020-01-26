@@ -1,6 +1,7 @@
 import React from 'react';
 import  ReactDOM from 'react-dom';
 import Inspections from 'components/Inspections';
+import './application.css'; // @TODO change to Sass
 
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
@@ -11,9 +12,7 @@ import Inspections from 'components/Inspections';
 // require("turbolinks").start()
 // require("@rails/activestorage").start()
 // require("channels")
-document.addEventListener("DOMContentLoaded", function() {
-   console.log('Your document is ready!');
-   debugger;
+document.addEventListener("DOMContentLoaded", () => {
    ReactDOM.render(<Inspections />, document.getElementById('app'));
 });
 

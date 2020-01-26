@@ -1,4 +1,5 @@
 module.exports = function(api) {
+
   var validEnv = ['development', 'test', 'production']
   var currentEnv = api.env()
   var isDevelopmentEnv = api.env('development')
@@ -37,6 +38,7 @@ module.exports = function(api) {
       ]
     ].filter(Boolean),
     plugins: [
+      '@babel/plugin-transform-react-jsx',
       'babel-plugin-macros',
       '@babel/plugin-syntax-dynamic-import',
       isTestEnv && 'babel-plugin-dynamic-import-node',

@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'inspections#index'
+  root to: 'pages#index'
   resources :inspections
 end

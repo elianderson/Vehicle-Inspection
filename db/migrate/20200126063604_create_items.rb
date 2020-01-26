@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :condition
       t.integer :area_id
-      t.text :extended_attributes
+      t.text :details
 
       t.timestamps
     end

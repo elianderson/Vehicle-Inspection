@@ -1,0 +1,2 @@
+class TirePreassureItem < Item
+end

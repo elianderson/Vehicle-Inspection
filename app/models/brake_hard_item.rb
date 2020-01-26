@@ -1,0 +1,3 @@
+class BrakeHardItem < Item
+
+end

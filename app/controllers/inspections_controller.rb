@@ -6,6 +6,14 @@ class InspectionsController < ApplicationController
     end
   end
 
+  def new
+    @inspection = InspectionFactory.build
+    respond_to do |format|
+      format.json
+    end
+  end
+
+
   def show
     @inspection = Inspection.find(params[:id])
     respond_to do |format|

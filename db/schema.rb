@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_063604) do
+ActiveRecord::Schema.define(version: 2020_01_26_082854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,9 +37,11 @@ ActiveRecord::Schema.define(version: 2020_01_26_063604) do
     t.string "name"
     t.integer "condition"
     t.integer "area_id"
-    t.text "extended_attributes"
+    t.text "details"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "type"
+    t.integer "sequence"
   end
 
   create_table "sections", force: :cascade do |t|

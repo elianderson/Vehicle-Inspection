@@ -1,0 +1,3 @@
+class BrakeSoftItem < Item
+
+end

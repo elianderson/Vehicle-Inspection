@@ -1,3 +1,6 @@
 json.name item.name
 json.condition item.condition
-json.details item.details
+
+item.detail_keys&.map do |detail|
+  json.merge! "#{detail}" => item.public_send(detail)
+end

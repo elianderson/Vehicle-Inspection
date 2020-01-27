@@ -1,3 +1,4 @@
+json.id item.id
 json.name item.name
 json.condition item.condition
 

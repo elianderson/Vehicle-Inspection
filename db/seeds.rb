@@ -22,7 +22,7 @@ Inspection.destroy_all
       item.condition = rand(3)
       item.thickness = rand(10) if item.respond_to?(:thickness)
       item.tread_depth = rand(32) if item.respond_to?(:tread_depth)
-      item.pressure = [20..80].sample if item.respond_to?(:pressure)
+      item.pressure = (20..80).to_a.sample if item.respond_to?(:pressure)
       item.save
     end
     area.save

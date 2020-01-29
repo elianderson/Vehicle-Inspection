@@ -82,7 +82,7 @@ class InspectionsController < ApplicationController
             :name,
             :condition,
             :thickness,
-            :preassure,
+            :pressure,
             :tread_depth
           ]
         ]

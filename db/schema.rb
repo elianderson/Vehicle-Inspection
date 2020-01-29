@@ -44,11 +44,4 @@ ActiveRecord::Schema.define(version: 2020_01_26_082854) do
     t.integer "sequence"
   end
 
-  create_table "sections", force: :cascade do |t|
-    t.string "name"
-    t.integer "sequence"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
 end

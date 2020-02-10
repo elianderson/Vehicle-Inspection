@@ -12,7 +12,7 @@ class Inspections extends React.Component {
     };
   }
   async componentDidMount() {
-    const data = await fetch('/inspections/10.json')
+    const data = await fetch('/api/inspections/10.json')
       .then(res => res.json());
     this.setState({
       data,

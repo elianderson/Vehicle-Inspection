@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users,
+    path: '',
+    path_names: {
+      registration: 'sign_up'
+    },
+    controllers: {
+      sessions: 'sessions',
+      registrations: 'registrations'
+    }
+
   root to: 'pages#index'
   scope :api do
     resources :inspections
-    resources :users
-    post '/login', to: 'auth#login'
-    post '/auto_login', to: 'auth#auto_login'
-    post '/secured', to: 'auth#secured'
   end
 
  get '*path', to: 'pages#index'

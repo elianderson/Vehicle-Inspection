@@ -1,6 +1,6 @@
 import React from 'react';
 import  ReactDOM from 'react-dom';
-import App from 'App';
+import App from './../App.tsx';
 import './application.css'; // @TODO change to Sass
 
 // This file is automatically compiled by Webpack, along with any other files

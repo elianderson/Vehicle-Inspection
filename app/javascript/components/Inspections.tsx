@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import Area from './Area';
 import React from "react";
 
-class Inspections extends React.Component {
-  constructor(props) {
+class Inspections extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.state = {
       data: {
@@ -15,7 +15,10 @@ class Inspections extends React.Component {
     const data = await fetch('/api/inspections/10.json')
       .then(res => res.json());
     this.setState({
-      data,
+      data: {
+        vin: '12345',
+        areas: [1, 2, 3]
+      },
     });
   }
   render () {
@@ -34,11 +37,11 @@ class Inspections extends React.Component {
         <header className="pagelet">
           <h1><span className="visually-hidden">Phoenix Motors</span></h1>
         </header>
-        <form id="wrapper" class="pagelet">
+        <form id="wrapper" className="pagelet">
           {areas}
           <button type="submit">Submit Inspection Report</button>
         </form>
-        <footer role="contentinfo" class="pagelet">
+        <footer role="contentinfo" className="pagelet">
           <p>©2020 Phoenix&nbsp;Motors</p>
         </footer>
       </React.Fragment>
@@ -46,7 +49,4 @@ class Inspections extends React.Component {
   }
 }
 
-Inspections.propTypes = {
-  inspectionss: PropTypes.array
-};
 export default Inspections

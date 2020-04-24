@@ -15,10 +15,7 @@ class Inspections extends React.Component<IProps, IState> {
     const data = await fetch('/api/inspections/10.json')
       .then(res => res.json());
     this.setState({
-      data: {
-        vin: '12345',
-        areas: [1, 2, 3]
-      },
+      data
     });
   }
   render () {

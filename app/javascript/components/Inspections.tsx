@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import Area from './Area';
 import React from "react";
 
@@ -25,8 +24,8 @@ class Inspections extends React.Component<IProps, IState> {
       return <p>Loading Bitch&hellip;</p>;
     }
 
-    const areas = data.areas.map(area => (
-      <Area open {...area} />
+    const areas = data.areas.map((area, index) => (
+      <Area key={`${area.name}_${index}`} open {...area} />
     ));
 
     return (

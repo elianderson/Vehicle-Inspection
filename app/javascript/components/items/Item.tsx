@@ -1,17 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Item from './Item';
 
-const BasicItem = ({
+const Item = ({
   id,
   condition,
   name,
   type,
 }) => {
-  const props = { id, condition, name, type };
-  return (
-    <Item {...props} />
-  );
   return (
     <fieldset data-item-id={id}>
       <legend>{name}</legend>
@@ -31,4 +25,4 @@ const BasicItem = ({
   );
 };
 
-export default BasicItem;
+export default Item;

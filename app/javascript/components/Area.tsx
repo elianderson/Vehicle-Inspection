@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import BasicItem from './items/BasicItem';
 import BrakeHardItem from './items/BrakeHardItem';
 import BrakeSoftItem from './items/BrakeSoftItem';
@@ -42,25 +41,23 @@ const Area = ({
  );
 };
 
-Area.propTypes = {
-  id: PropTypes.number,
-  name: PropTypes.string,
-  open: PropTypes.bool,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string,
-      condition: PropTypes.string,
-      name: PropTypes.oneOf([
-        'BasicItem',
-        'BrakeHardItem',
-        'BrakeSoftItem',
-        'TirePressureItem',
-        'TireTreadItem',
-      ])
-    })
-  )
-};
+// Area.propTypes = {
+//   id: PropTypes.number,
+//   name: PropTypes.string,
+//   open: PropTypes.bool,
+//   items: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number,
+//       condition: PropTypes.string,
+//       name: PropTypes.oneOf([
+//         'BasicItem',
+//         'BrakeHardItem',
+//         'BrakeSoftItem',
+//         'TirePressureItem',
+//         'TireTreadItem',
+//       ])
+//     })
+//   )
+// };
 
 export default Area;
-

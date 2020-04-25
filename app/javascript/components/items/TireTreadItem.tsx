@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Item = ({
+const TireTreadItem = ({
   id,
   condition,
   name,
@@ -26,4 +25,4 @@ const Item = ({
   );
 };
 
-export default Item;
+export default TireTreadItem;

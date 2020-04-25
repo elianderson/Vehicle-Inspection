@@ -1,0 +1,13 @@
+interface Area {
+  id: number,
+  name?: string,
+  open: boolean,
+  items?: Item[]
+}
+
+interface Item {
+  id: number,
+  condition?: string,
+  name?: string
+}
+

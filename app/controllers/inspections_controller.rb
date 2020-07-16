@@ -73,6 +73,7 @@ class InspectionsController < ApplicationController
         :vin,
         :date_performed,
         :technition_id,
+        :notes,
         areas_attributes: [
           :id,
           :name,

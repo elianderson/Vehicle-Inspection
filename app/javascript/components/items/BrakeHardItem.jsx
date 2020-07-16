@@ -8,7 +8,7 @@ const BrakeHardItem = ({
 }) => {
   return (
     <fieldset data-item-id={id}>
-      <legend>{name}</legend>
+      <legend>{name} - Brake Hard</legend>
         <div>
           <input required id={`${name.toLowerCase()}_good`} type="radio" name={name} value="good" />
           <label htmlFor={`${name.toLowerCase()}_good`}><span>Good</span></label>

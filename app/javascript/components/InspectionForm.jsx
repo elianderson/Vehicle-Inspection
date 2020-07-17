@@ -13,16 +13,23 @@ const InspectionForm = (props) => {
     props.set({...inspection, notes: e.target.value});
   };
 
-  if (!props.inspection) {
-    return <p>Loading Bitch&hellip;</p>;
+  const updateDate = (e) => {
+    props.set({...inspection, date_performed: e.target.value});
+  };
+
+  if (!inspection) {
+    return <p>Loading&hellip;</p>;
   }
 
   return (
     <form onSubmit={ props.submit }>
-      Form:
       <label>
         VIN:
         <input type="text" value={inspection.vin} onChange={updateVin} />
+      </label>
+      <label>
+        Date Performed:
+        <input type='date' value={inspection.date_performed} onChange={updateDate} />
       </label>
       <label>
         Notes:

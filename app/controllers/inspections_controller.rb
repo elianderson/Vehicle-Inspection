@@ -14,7 +14,7 @@ class InspectionsController < ApplicationController
 
   # GET /inspections/new
   def new
-    @inspection = InspectionFactory.build
+    @inspection = InspectionFactory.build(date_performed: Date.today)
   end
 
   # GET /inspections/1/edit
@@ -84,7 +84,8 @@ class InspectionsController < ApplicationController
             :condition,
             :thickness,
             :pressure,
-            :tread_depth
+            :tread_depth,
+            :type
           ]
         ]
       )

@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useQuery } from 'react-query';
 import InspectionForm from './InspectionForm'
 
 const Inspection = () => {
   const { id } = useParams();
-  const initialInspection = {vin: '', notes: ''}
+  const initialInspection = {vin: '', notes: '', date_performed: new Date()}
   const [inspection, setInspection] = useState(initialInspection);
   const [token, setToken] = useState('');
 
-  useEffect(() => {
+  const { isLoading, error, data } = useQuery('inspections', () =>
     fetch(`/api/inspections/${id}.json`)
       .then(res => res.json())
       .then(setInspection)
-    }, []);
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();

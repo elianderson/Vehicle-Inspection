@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 
 const Inspections = () => {
   const [inspections, setInspections] = useState([]);
 
-  useEffect(() => {
+  const { isLoading, error, data } = useQuery('inspections', () =>
     fetch('/api/inspections.json')
       .then(res => res.json())
       .then(setInspections)
-    }, []);
+  );
 
   const destroy = (e, b) => {
     const id = e.target.getAttribute('inspection-id');
-
     e.preventDefault();
     fetch(`/api/inspections/${id}.json`, {
       method: 'DELETE',
@@ -34,8 +34,12 @@ const Inspections = () => {
   };
 
 
-  if (!inspections.length) {
-    return <p>Loading Bitch&hellip;</p>;
+  if (isLoading) {
+    return <p>Loading&hellip;</p>;
+  }
+
+  if (error) {
+    return "An error has occurred: " + error.message;
   }
 
   return (

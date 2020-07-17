@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 const InspectionForm = (props) => {
   const inspection = props.inspection
@@ -17,6 +18,10 @@ const InspectionForm = (props) => {
     props.set({...inspection, date_performed: e.target.value});
   };
 
+  const updateDatePerformed = (date) => {
+    props.set({...inspection, date_performed: date});
+  };
+
   if (!inspection) {
     return <p>Loading&hellip;</p>;
   }
@@ -29,7 +34,7 @@ const InspectionForm = (props) => {
       </label>
       <label>
         Date Performed:
-        <input type='date' value={inspection.date_performed} onChange={updateDate} />
+        <DatePicker selected={new Date(inspection.date_performed)} onChange={updateDatePerformed} />
       </label>
       <label>
         Notes:
